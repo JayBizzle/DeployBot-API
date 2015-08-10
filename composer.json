@@ -1,0 +1,27 @@
+{
+    "name": "jaybizzle/deploybot-api",
+    "type": "library",
+    "description": "A simple PHP wrapper for the DeployBot API",
+    "keywords": ["deploybot", "dploy", "deploy", "api"],
+    "homepage": "https://github.com/JayBizzle/DeployBot-API/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark Beech",
+            "email": "mbeech@mark-beech.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jaybizzle\\": "src/"
+        }
+    }
+}
