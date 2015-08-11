@@ -18,10 +18,12 @@ class DeployBot
         $this->api_endpoint = str_replace('<account>', $account, $this->api_endpoint);
 
         $this->client = new Client([
-            'base_uri' => $this->api_endpoint,
-            'headers'  => [
-                'X-Api-Token' => $this->api_key,
-                'Accept'      => 'application/json',
+            'base_url' => $this->api_endpoint,
+            'defaults' => [
+                'headers'  => [
+                    'X-Api-Token' => $this->api_key,
+                    'Accept'      => 'application/json',
+                ],
             ],
             'debug' => false,
         ]);
