@@ -6,7 +6,7 @@ Run composer require `jaybizzle/deploybot-api 1.*` or add `"jaybizzle/deploybot-
 ### Usage
 You can read the offical DeployBot API documention here - http://deploybot.com/api/
 
-All the Deploybot API endpoints can be called by prefixing the name with `get` e.g
+All the DeployBot API endpoints can be called by prefixing the name with `get` e.g
 
 ```php
 use Jaybizzle\DeployBot;
