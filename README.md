@@ -1,5 +1,5 @@
 # DeployBot API
-
+[![StyleCI](https://styleci.io/repos/40478608/shield)](https://styleci.io/repos/40478608)
 ### Installation
 Add `"jaybizzle/deploybot-api" :"1.*"` to your composer.json.
 
