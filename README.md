@@ -9,6 +9,8 @@ You can read the offical DeployBot API documention here - http://deploybot.com/a
 All the Deploybot API endpoints can be called by prefixing the name with `get` e.g
 
 ```php
+use Jaybizzle\DeployBot;
+
 $db = new DeployBot('YOUR_API_KEY', 'YOUR_ACCOUNT_NAME');
 
 // get all users
