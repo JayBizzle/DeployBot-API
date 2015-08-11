@@ -19,9 +19,9 @@ class DeployBot
 
         $this->client = new Client([
             'base_uri' => $this->api_endpoint,
-            'headers' => [
+            'headers'  => [
                 'X-Api-Token' => $this->api_key,
-                'Accept' => 'application/json',
+                'Accept'      => 'application/json',
             ],
             'debug' => false,
         ]);
@@ -39,6 +39,7 @@ class DeployBot
     {
         if (substr($name, 0, 3) == 'get') {
             $name = strtolower(substr($name, 3));
+
             return $this->buildRequest($name, $args);
         } else {
             return $this->addQuery($name, $args);
