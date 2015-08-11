@@ -35,7 +35,7 @@ class DeployBot
      * @param string $method
      * @param array  $args
      *
-     * @return Object
+     * @return object
      */
     public function __call($name, $args)
     {
@@ -51,7 +51,7 @@ class DeployBot
     /**
      * Trigger a deployment.
      * 
-     * @return JSON
+     * @return object
      */
     public function triggerDeployment()
     {
@@ -63,6 +63,8 @@ class DeployBot
      * 
      * @param string $method
      * @param array  $args
+     *
+     * @return $this
      */
     private function addQuery($name, $args)
     {
@@ -80,7 +82,7 @@ class DeployBot
      * @param array  $args
      * @param string $method
      *
-     * @return JSON
+     * @return object
      */
     private function buildRequest($resource, $args = [], $method = 'get')
     {
@@ -104,7 +106,7 @@ class DeployBot
      * @param array  $args
      * @param string $method
      *
-     * @return JSON
+     * @return object
      */
     private function sendRequest($resource, $query = [], $method = 'get')
     {
