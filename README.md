@@ -1,7 +1,7 @@
 # DeployBot API
 
 ### Installation
-Run composer require `jaybizzle/deploybot-api 1.*` or add `"jaybizzle/deploybot-api" :"1.*"` to your composer.json.
+Add `"jaybizzle/deploybot-api" :"1.*"` to your composer.json.
 
 ### Usage
 You can read the offical DeployBot API documention here - http://deploybot.com/api/
