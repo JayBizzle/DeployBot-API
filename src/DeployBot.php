@@ -55,7 +55,7 @@ class DeployBot
      */
     public function triggerDeployment()
     {
-        $this->buildRequest('deployments', [], 'post');
+        return $this->buildRequest('deployments', [], 'post');
     }
 
     /**
