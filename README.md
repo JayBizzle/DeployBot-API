@@ -4,7 +4,7 @@
 Add `"jaybizzle/deploybot-api": "1.*"` to your composer.json.
 
 ### Usage
-You can read the offical DeployBot API documention here - http://deploybot.com/api/
+You can read the official DeployBot API documention here - http://deploybot.com/api/
 
 All the DeployBot API endpoints can be called by prefixing the name with `get` e.g
 
@@ -35,7 +35,7 @@ $users = $db->limit(10)->after(324)->getUsers();
 Some more examples...
 
 ```php
-//  list deployment for envirnoment and limit results
+//  list deployments for environment and limit results
 $deployments = $db->environmentId(3452)->limit(10)->getDeployments();
 ```
 
