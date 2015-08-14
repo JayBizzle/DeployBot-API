@@ -2,10 +2,9 @@
 
 namespace DeployBot\Test;
 
-use Jaybizzle\DeployBot;
 use GuzzleHttp\Client;
 use GuzzleHttp\Subscriber\Mock;
-use GuzzleHttp\Message\Response;
+use Jaybizzle\DeployBot;
 
 class DeployBotTest extends \PHPUnit_Framework_TestCase
 {
@@ -31,7 +30,7 @@ class DeployBotTest extends \PHPUnit_Framework_TestCase
         $expected = 'https://foobar.deploybot.com/api/v1/';
 
         $db = $this->getMockBuilder('Jaybizzle\DeployBot')
-                    ->setConstructorArgs(array('foo_api_key', 'bar_account_name'))
+                    ->setConstructorArgs(['foo_api_key', 'bar_account_name'])
                     ->disableOriginalConstructor()
                     ->setMethods(null)
                     ->getMock();
@@ -59,7 +58,7 @@ class DeployBotTest extends \PHPUnit_Framework_TestCase
 
     public function testAddingQueryParams()
     {
-        $args = array(2);
+        $args = [2];
 
         $db = new DeployBot('foo_api_key', 'bar_account_name', new \stdClass());
 
@@ -71,15 +70,14 @@ class DeployBotTest extends \PHPUnit_Framework_TestCase
 
     public function providerParamNames()
     {
-        return array(
-            array('fooBar', 'foo_bar'),
-            array('FooBar', 'foo_bar'),
-            array('FOOBAR', 'f_o_o_b_a_r'),
-        );
+        return [
+            ['fooBar', 'foo_bar'],
+            ['FooBar', 'foo_bar'],
+            ['FOOBAR', 'f_o_o_b_a_r'],
+        ];
     }
 
     public function tearDown()
     {
-
     }
 }
