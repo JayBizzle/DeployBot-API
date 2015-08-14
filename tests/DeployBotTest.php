@@ -8,11 +8,6 @@ use Jaybizzle\DeployBot;
 
 class DeployBotTest extends \PHPUnit_Framework_TestCase
 {
-    public function setUp()
-    {
-        //
-    }
-
     /**
      * @dataProvider providerParamNames
      */
@@ -75,9 +70,5 @@ class DeployBotTest extends \PHPUnit_Framework_TestCase
             ['FooBar', 'foo_bar'],
             ['FOOBAR', 'f_o_o_b_a_r'],
         ];
-    }
-
-    public function tearDown()
-    {
     }
 }
