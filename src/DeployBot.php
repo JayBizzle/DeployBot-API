@@ -7,19 +7,20 @@ use GuzzleHttp\Exception\ClientException;
 
 class DeployBot
 {
-    private $api_key;
-    private $api_endpoint = 'https://<account>.deploybot.com/api/v1/';
-    private $client;
-    private $query = [];
+    public $api_key;
+    public $api_endpoint = 'https://<account>.deploybot.com/api/v1/';
+    public $client;
+    public $query = [];
 
-    public function __construct($api_key, $account)
+    public function __construct($api_key, $account, $client = null)
     {
         $this->api_key = $api_key;
-        $this->api_endpoint = str_replace('<account>', $account, $this->api_endpoint);
+        $this->api_endpoint = $this->parseApiEndpoint($account);
 
-        $this->client = new Client([
+        $this->client = ($client) ?: new Client([
             'base_url' => $this->api_endpoint,
             'defaults' => [
+                //'proxy'   => 'http://localhost:8888',
                 'headers'  => [
                     'X-Api-Token' => $this->api_key,
                     'Accept'      => 'application/json',
@@ -27,6 +28,11 @@ class DeployBot
             ],
             'debug' => false,
         ]);
+    }
+
+    public function parseApiEndpoint($account)
+    {
+        return str_replace('<account>', $account, $this->api_endpoint);
     }
 
     /**
@@ -66,7 +72,7 @@ class DeployBot
      *
      * @return $this
      */
-    private function addQuery($name, $args)
+    public function addQuery($name, $args)
     {
         $name = $this->snakeCase($name);
 
@@ -84,11 +90,11 @@ class DeployBot
      *
      * @return object
      */
-    private function buildRequest($resource, $args = [], $method = 'get')
+    public function buildRequest($resource, $args = [], $method = 'get')
     {
         $query = [];
 
-        if (count($args[0]) == 1 && is_int($args[0])) {
+        if (isset($args[0]) && count($args[0]) == 1 && is_int($args[0])) {
             $resource = $resource.'/'.$args[0];
         }
 
@@ -108,7 +114,7 @@ class DeployBot
      *
      * @return object
      */
-    private function sendRequest($resource, $query = [], $method = 'get')
+    public function sendRequest($resource, $query = [], $method = 'get')
     {
         $option_name = ($method == 'get') ? 'query' : 'json';
 
@@ -121,7 +127,7 @@ class DeployBot
         // Reset query parameters
         $this->query = [];
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody());
     }
 
     /**
@@ -132,7 +138,7 @@ class DeployBot
      *
      * @return string
      */
-    private function snakeCase($value, $delimiter = '_')
+    public function snakeCase($value, $delimiter = '_')
     {
         $key = $value.$delimiter;
 
