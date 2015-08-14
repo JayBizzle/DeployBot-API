@@ -37,6 +37,9 @@ Some more examples...
 ```php
 //  list deployments for environment and limit results
 $deployments = $db->environmentId(3452)->limit(10)->getDeployments();
+
+// list repositories and limit results
+$repositories = $db->limit(20)->getRepositories();
 ```
 
 _NOTE: Query parameters are listed in the DeployBot API docs as `snake_case` but we access them using `camelCase` methods so all method calls have a consistent naming convention_
