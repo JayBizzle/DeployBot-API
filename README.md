@@ -1,5 +1,5 @@
 # DeployBot API
-[![Build Status](https://travis-ci.org/JayBizzle/DeployBot-API.svg)](https://travis-ci.org/JayBizzle/DeployBot-API) [![StyleCI](https://styleci.io/repos/40478608/shield)](https://styleci.io/repos/40478608) [![Total Downloads](https://img.shields.io/packagist/dt/JayBizzle/DeployBot-API.svg?style=flat-square)](https://packagist.org/packages/jaybizzle/deploybot-api)
+[![Build Status](https://img.shields.io/travis/JayBizzle/DeployBot-API/master.svg?style=flat-square)](https://travis-ci.org/JayBizzle/DeployBot-API) [![StyleCI](https://styleci.io/repos/40478608/shield)](https://styleci.io/repos/40478608) [![Total Downloads](https://img.shields.io/packagist/dt/JayBizzle/DeployBot-API.svg?style=flat-square)](https://packagist.org/packages/jaybizzle/deploybot-api)
 ### Installation
 Add `"jaybizzle/deploybot-api": "1.*"` to your composer.json.
 
