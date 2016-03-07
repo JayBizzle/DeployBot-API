@@ -37,7 +37,7 @@ class DeployBot
 
     /**
      * Dynamically add query parameters or call API endpoints.
-     * 
+     *
      * @param string $method
      * @param array  $args
      *
@@ -56,7 +56,7 @@ class DeployBot
 
     /**
      * Trigger a deployment.
-     * 
+     *
      * @return object
      */
     public function triggerDeployment()
@@ -66,7 +66,7 @@ class DeployBot
 
     /**
      * Add query parameters.
-     * 
+     *
      * @param string $method
      * @param array  $args
      *
@@ -83,7 +83,7 @@ class DeployBot
 
     /**
      * Prepare the request.
-     * 
+     *
      * @param string $resource
      * @param array  $args
      * @param string $method
@@ -107,7 +107,7 @@ class DeployBot
 
     /**
      * Send the request.
-     * 
+     *
      * @param string $resource
      * @param array  $args
      * @param string $method
@@ -132,7 +132,7 @@ class DeployBot
 
     /**
      * Convert camelCase methods to snake_case params.
-     * 
+     *
      * @param string $value
      * @param string $delimiter
      *
