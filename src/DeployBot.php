@@ -38,7 +38,7 @@ class DeployBot
     /**
      * Dynamically add query parameters or call API endpoints.
      *
-     * @param string $method
+     * @param string $name
      * @param array  $args
      *
      * @return object
