@@ -3,7 +3,8 @@
 namespace DeployBot\Test;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Subscriber\Mock;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use Jaybizzle\DeployBot;
 
 class DeployBotTest extends \PHPUnit_Framework_TestCase
@@ -24,7 +25,7 @@ class DeployBotTest extends \PHPUnit_Framework_TestCase
     {
         $expected = 'https://foobar.deploybot.com/api/v1/';
 
-        $db = $this->getMockBuilder('Jaybizzle\DeployBot')
+        $db = $this->getMockBuilder(DeployBot::class)
                     ->setConstructorArgs(['foo_api_key', 'bar_account_name'])
                     ->disableOriginalConstructor()
                     ->setMethods(null)
@@ -37,12 +38,12 @@ class DeployBotTest extends \PHPUnit_Framework_TestCase
 
     public function testGetUsersResponse()
     {
-        $client = new Client();
-
-        $mock = new Mock();
-        $mock->addResponse(__DIR__.'/responses/getUsersResponse.txt');
-
-        $client->getEmitter()->attach($mock);
+        $mockResponse = file_get_contents(__DIR__.'/responses/getUsersResponse.txt');
+        $mock = new MockHandler([
+            \GuzzleHttp\Psr7\parse_response($mockResponse),
+        ]);
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
 
         $db = new DeployBot('foo_api_key', 'bar_account_name', $client);
 
