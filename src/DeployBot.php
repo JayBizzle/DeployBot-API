@@ -4,6 +4,7 @@ namespace Jaybizzle;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use Psr\Http\Message\ResponseInterface;
 
 class DeployBot
 {
@@ -67,7 +68,7 @@ class DeployBot
     /**
      * Add query parameters.
      *
-     * @param string $method
+     * @param string $name
      * @param array  $args
      *
      * @return $this
@@ -109,7 +110,7 @@ class DeployBot
      * Send the request.
      *
      * @param string $resource
-     * @param array  $args
+     * @param array  $query
      * @param string $method
      *
      * @return object
@@ -119,6 +120,7 @@ class DeployBot
         $option_name = ($method == 'get') ? 'query' : 'json';
 
         try {
+            /** @var ResponseInterface $response */
             $response = $this->client->$method($resource, [$option_name => $query]);
         } catch (ClientException $e) {
             return $e->getResponse()->getBody()->getContents();
@@ -140,8 +142,6 @@ class DeployBot
      */
     public function snakeCase($value, $delimiter = '_')
     {
-        $key = $value.$delimiter;
-
         if (!ctype_lower($value)) {
             $value = strtolower(preg_replace('/(.)(?=[A-Z])/', '$1'.$delimiter, $value));
             $value = preg_replace('/\s+/', '', $value);
