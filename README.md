@@ -1,7 +1,10 @@
 # DeployBot API
 [![Build Status](https://img.shields.io/travis/JayBizzle/DeployBot-API/master.svg?style=flat-square)](https://travis-ci.org/JayBizzle/DeployBot-API) [![StyleCI](https://styleci.io/repos/40478608/shield)](https://styleci.io/repos/40478608) [![Total Downloads](https://img.shields.io/packagist/dt/JayBizzle/DeployBot-API.svg?style=flat-square)](https://packagist.org/packages/jaybizzle/deploybot-api)
 ### Installation
-Add `"jaybizzle/deploybot-api": "1.*"` to your composer.json.
+Add `"jaybizzle/deploybot-api": "2.*"` to your composer.json.
+
+### Older Versions
+If you need to use this with older versions of PHP or Guzzle, then see the `1.0` branch
 
 ### Usage
 You can read the official DeployBot API documention here - http://deploybot.com/api/
