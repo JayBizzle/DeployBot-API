@@ -6,8 +6,9 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use Jaybizzle\DeployBot;
+use PHPUnit\Framework\TestCase;
 
-class DeployBotTest extends \PHPUnit_Framework_TestCase
+class DeployBotTest extends TestCase
 {
     /**
      * @dataProvider providerParamNames
