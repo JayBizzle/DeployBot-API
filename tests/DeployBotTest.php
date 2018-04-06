@@ -2,11 +2,11 @@
 
 namespace DeployBot\Test;
 
-use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use Jaybizzle\DeployBot;
+use PHPUnit\Framework\TestCase;
 
 class DeployBotTest extends TestCase
 {
