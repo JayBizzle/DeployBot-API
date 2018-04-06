@@ -2,12 +2,13 @@
 
 namespace DeployBot\Test;
 
+use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use Jaybizzle\DeployBot;
 
-class DeployBotTest extends \PHPUnit_Framework_TestCase
+class DeployBotTest extends TestCase
 {
     /**
      * @dataProvider providerParamNames
