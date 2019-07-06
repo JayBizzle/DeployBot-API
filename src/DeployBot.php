@@ -19,13 +19,10 @@ class DeployBot
         $this->api_endpoint = $this->parseApiEndpoint($account);
 
         $this->client = ($client) ?: new Client([
-            'base_url' => $this->api_endpoint,
-            'defaults' => [
-                //'proxy'   => 'http://localhost:8888',
-                'headers'  => [
-                    'X-Api-Token' => $this->api_key,
-                    'Accept'      => 'application/json',
-                ],
+            'base_uri' => $this->api_endpoint,
+            'headers'  => [
+                'X-Api-Token' => $this->api_key,
+                'Accept'      => 'application/json',
             ],
             'debug' => false,
         ]);
